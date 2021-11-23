@@ -1,0 +1,38 @@
+class Complex:
+
+    def __init__(self, rc, mc):
+        self.vesh = rc
+        self.mnim = mc
+
+    def PrintComplex(с1 = complex()):
+        print(str(с1.vesh) + ' + ' + str(с1.mnim) + ' * i')
+
+
+class ComplexMath:
+    @staticmethod
+    def AddComp(c1=complex(), c2=complex()):
+        allr = c1.vesh + c2.vesh
+        allm = c1.mnim + c2.mnim
+        ctemp = Complex(allr, allm)
+        ctemp.PrintComplex()
+
+    @staticmethod
+    def MultComp(c1=complex(), c2=complex()):
+        allr = c1.vesh * c2.vesh - c1.mnim * c2.mnim
+        allm = c1.vesh * c2.mnim + c2.vesh * c1.mnim
+        ctemp = Complex(allr, allm)
+        ctemp.PrintComplex()
+
+    @staticmethod
+    def DivComp(c1=complex(), c2=complex()):
+        allr = (c1.vesh * c2.vesh + c1.mnim * c2.mnim) / (c2.vesh * c2.vesh + c2.mnim * c2.mnim)
+        allm = (c1.mnim * c2.vesh - c1.vesh * c2.mnim) / (c2.vesh * c2.vesh + c2.mnim * c2.mnim)
+        ctemp = Complex(allr, allm)
+        ctemp.PrintComplex()
+
+
+comp1 = Complex(1, 2)
+comp2 = Complex(5, 3)
+ComplexMath.AddComp(comp1, comp2)
+ComplexMath.MultComp(comp1, comp2)
+ComplexMath.DivComp(comp1, comp2)
